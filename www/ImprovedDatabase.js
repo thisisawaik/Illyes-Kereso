@@ -11,10 +11,18 @@ function ImprovedDatabase(name, description, size)
 			resultProcessor = function(result){console.log(result.rows);};
 		}
 		
-		this.database.transaction(function(ta)
-		{
-			ta.executeSql(query, [], function(ta, rs){resultProcessor(rs);});
-		});
+		this.database.transaction
+		(
+			function(ta)
+			{
+				ta.executeSql(query, [], function(ta, rs){resultProcessor(rs);});
+			}, 
+			
+			function(er)
+			{
+				console.log(er);
+			}
+		);
 		
 		return query  + " -> " + resultProcessor;
 	};
