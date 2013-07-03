@@ -29,7 +29,14 @@ function output_results(result)
 
 function displayList()
 {
-	db.sqlQuery("SELECT * FROM `people` WHERE `name` LIKE '%" + input + "%'", output_results);
+	var toSearch = "";
+	
+	for (var i = 0; i < input.length; i++)
+	{
+		toSearch += input[i] + '%';
+	}
+	
+	db.sqlQuery("SELECT * FROM `people` WHERE `name` LIKE '%" + toSearch + "'", output_results);
 }
 
 function select(id)
