@@ -7,6 +7,8 @@ var db;
 
 function init()
 {
+	global_init();
+	
 	input = document.getElementById("input");
 	submit_button = document.getElementById("submit");
 	
@@ -16,8 +18,6 @@ function init()
 	submit_button.addEventListener("click", search, false);
 	create_button.addEventListener("click", create, false);
 	populate_button.addEventListener("click", populate, false);
-	
-	db = new ImprovedDatabase("data", "adatok", 1024 * 1024 * 5);
 }
 
 function search()

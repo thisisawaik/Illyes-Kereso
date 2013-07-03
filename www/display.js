@@ -6,9 +6,9 @@ var db;
 
 function init()
 {
-	id = localStorage.getItem("id");
+	global_init();
 	
-	db = new ImprovedDatabase("data", "adatok", 1024 * 1024 * 5);
+	id = localStorage.getItem("id");
 	
 	display();
 }

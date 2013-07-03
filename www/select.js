@@ -6,10 +6,10 @@ var db;
 
 function init()
 {
+	global_init();
+	
 	input = localStorage.getItem("input");
 	output = document.getElementById("output");
-	
-	db = new ImprovedDatabase("data", "adatok", 1024 * 1024 * 5);
 	
 	displayList();
 }
