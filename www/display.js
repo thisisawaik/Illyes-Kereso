@@ -15,7 +15,7 @@ function init()
 
 function display_data(result)
 {
-	document.getElementById("data").innerHTML += result.rows.item(0).name;
+	document.getElementById("name").innerHTML += result.rows.item(0).name;
 }
 
 function display()

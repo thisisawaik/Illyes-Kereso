@@ -1,5 +1,7 @@
 "use strict";
 
+var version = 0.1;
+
 var input, output, submit_button;
 // var create_button, populate_button;
 
@@ -15,6 +17,12 @@ function init()
 		populate();
 		
 		localStorage.setItem("wasrun", true);
+		localStorage.setItem("version", version);
+	}
+	
+	if(localStorage.getItem("version") > version)
+	{
+		recreate();
 	}
 	
 	input = document.getElementById("input");
