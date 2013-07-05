@@ -1,7 +1,7 @@
 "use strict";
 
 var input, output, submit_button;
-var create_button, populate_button;
+// var create_button, populate_button;
 
 var db;
 
@@ -9,18 +9,26 @@ function init()
 {
 	global_init();
 	
+	if(!localStorage.getItem("wasrun"))
+	{
+		create();
+		populate();
+		
+		localStorage.setItem("wasrun", true);
+	}
+	
 	input = document.getElementById("input");
 	output = document.getElementById("output");
 	submit_button = document.getElementById("submit");
 	
-	create_button = document.getElementById("create");
-	populate_button = document.getElementById("populate");
+	// create_button = document.getElementById("create");
+	// populate_button = document.getElementById("populate");
 	
 	input.addEventListener("keyup", function(){displayList(input.value);console.log("sajt");}, false);
 	
 	submit_button.addEventListener("click", search, false);
-	create_button.addEventListener("click", create, false);
-	populate_button.addEventListener("click", populate, false);
+	// create_button.addEventListener("click", create, false);
+	// populate_button.addEventListener("click", populate, false);
 }
 
 function search()
