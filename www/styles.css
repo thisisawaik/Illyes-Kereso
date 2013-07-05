@@ -1,12 +1,14 @@
 body
 {
 	background-color: #BABABA;
+	
 	overflow: auto;
 }
 
 #content
 {
 	background-color: rgb(255,33,22);
+	
 	position: fixed;
 		top: 10px;
 		left: 10px;
@@ -14,33 +16,43 @@ body
 		height: 480px;
 		/*bottom: 10px;
 		right: 10px;*/
-	border: 5px;
+	
+	border-style: solid;
+		border-width: 5px;
 		border-color: rgb(255,193,1);
-		border-style: solid;
 }
 
 #search
 {
 	height: 25px;
 	text-align: center;
-	border: 3px;
+	
+	border-style: solid;
+		border-width: 3px;
 		border-color: rgb(255,193,1);
-		border-style: solid;
+	
 	margin: 5px;
 }
 
-#database_control
+#output
+{
+	text-align: center;
+}
+
+/*#database_control
 {
 	position: absolute;
 		bottom: 5px;
 		right: 5px;
 		left: 5px;
 		height: 25px;
+	
 	text-align: center;
-	border: 3px;
+	
+	border-style: solid;
+		border-width: 3px;
 		border-color: rgb(255,193,1);
-		border-style: solid;
-}
+}*/
 
 table
 {

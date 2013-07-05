@@ -1,3 +1,5 @@
+"use strict";
+
 var isPhoneGap = false;
 
 function global_init()
