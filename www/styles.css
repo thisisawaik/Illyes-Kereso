@@ -77,6 +77,15 @@ table
 	color: #DDDDDD;
 }
 
+.results
+{
+	margin: 2px;
+	padding:3px;
+	list-style-type:none;
+	text-align:center;
+	color: #DDDDDD;
+}
+
 #suggestions_box
 {
 	height: 150px;
@@ -90,8 +99,24 @@ table
 		border-right-width: 0px;
 		border-color: rgb(255,193,1);
 }
+
+#results_box
+{
+	margin: 5px;
+	background-color: #303030;
+	overflow: auto;
+	border-style: solid;
+		border-width: 3px;
+		border-color: rgb(255,193,1);
+}
+
 th,td
 {
 	border-style: solid;
 		border-width: 1px;
+}
+
+ul
+{
+	-webkit-padding-start: 0px;
 }
