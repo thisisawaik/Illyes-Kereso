@@ -48,13 +48,21 @@ function search()
 function displayList(searchInput)
 {
 	var toSearch = "";
+
+	if (searchInput.length!=0)
+	{	
+		for (var i = 0; i < searchInput.length; i++)
+		{
+			toSearch += searchInput[i] + '%';
+		}
 	
-	for (var i = 0; i < searchInput.length; i++)
-	{
-		toSearch += searchInput[i] + '%';
+		db.sqlQuery("SELECT * FROM `people` WHERE `name` LIKE '%" + toSearch + "'", output_results);
 	}
-	
-	db.sqlQuery("SELECT * FROM `people` WHERE `name` LIKE '%" + toSearch + "'", output_results);
+
+	else
+	{
+		output.innerHTML="";
+	}
 }
 
 function output_results(result)
