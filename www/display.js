@@ -21,4 +21,3 @@ function display_data(result)
 function display()
 {
 	db.sqlQuery("SELECT * FROM `people` WHERE `id` = " + id, display_data);
-}

@@ -13,6 +13,11 @@ function populate()
 	db.sqlQuery("INSERT INTO `people` (`name`, `class`) VALUES ('Andris', '10.a')");
 	db.sqlQuery("INSERT INTO `people` (`name`, `class`) VALUES ('Benedek', '8.a')");
 	db.sqlQuery("INSERT INTO `people` (`name`, `class`) VALUES ('Isti', '10.a')");
+
+	for (var i=0; i<100; i++)
+	{
+		db.sqlQuery("INSERT INTO `people` (`name`, `class`) VALUES ('"+"testemberke"+i+"', 'test.a')");
+	}
 }
 
 function recreate()
