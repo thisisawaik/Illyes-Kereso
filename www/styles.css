@@ -68,6 +68,28 @@ table
 	margin-right: auto;
 }
 
+.suggestions
+{
+	margin: 2px;
+	padding:3px;
+	list-style-type:none;
+	text-align:center;
+	color: #DDDDDD;
+}
+
+#suggestions_box
+{
+	height: 150px;
+	margin: 5px;
+	background-color: #303030;
+	overflow: auto;
+	border-style: solid;
+		border-top-width: 3px;
+		border-bottom-width: 3px;
+		border-left-width: 0px;
+		border-right-width: 0px;
+		border-color: rgb(255,193,1);
+}
 th,td
 {
 	border-style: solid;
