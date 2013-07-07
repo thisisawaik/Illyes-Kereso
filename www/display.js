@@ -20,4 +20,5 @@ function display_data(result)
 
 function display()
 {
-	db.sqlQuery("SELECT * FROM `people` WHERE `id` = " + id, display_data);
+	db.sqlQuery("SELECT * FROM `teachers` WHERE `id` = " + id, display_data);
+}

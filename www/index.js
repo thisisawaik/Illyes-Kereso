@@ -1,6 +1,6 @@
 "use strict";
 
-var version = 0.1;
+var dbVersion = 0.32;
 
 var input, output, submit_button;
 // var create_button, populate_button;
@@ -17,12 +17,13 @@ function init()
 		populate();
 		
 		localStorage.setItem("wasrun", true);
-		localStorage.setItem("version", version);
+		localStorage.setItem("dbVersion", dbVersion);
 	}
 	
-	if(localStorage.getItem("version") > version)
+	if(localStorage.getItem("dbVersion") < dbVersion)
 	{
 		recreate();
+		localStorage.setItem("dbVersion", dbVersion);
 	}
 	
 	input = document.getElementById("input");
@@ -32,7 +33,7 @@ function init()
 	// create_button = document.getElementById("create");
 	// populate_button = document.getElementById("populate");
 	
-	input.addEventListener("keyup", function(){displayList(input.value);console.log("sajt");}, false);
+	input.addEventListener("keyup", function(){displayList(input.value);}, false);
 	
 	submit_button.addEventListener("click", search, false);
 	// create_button.addEventListener("click", create, false);
@@ -49,14 +50,14 @@ function displayList(searchInput)
 {
 	var toSearch = "";
 
-	if (searchInput.length!=0)
+	if (searchInput.length != 0)
 	{	
 		for (var i = 0; i < searchInput.length; i++)
 		{
 			toSearch += searchInput[i] + '%';
 		}
 	
-		db.sqlQuery("SELECT * FROM `people` WHERE `name` LIKE '%" + toSearch + "'", output_results);
+		db.sqlQuery("SELECT * FROM `teachers` WHERE `name` LIKE '%" + toSearch + "'", output_results);
 	}
 
 	else
@@ -72,7 +73,7 @@ function output_results(result)
 	for (var i = 0; i < result.rows.length; i++)
 	{
 		var currentResult = result.rows.item(i);
-		concatenated_result += "<li class='suggestions' onclick='select("+ currentResult.id +")'>" + currentResult.name + " ("+ currentResult.class +")" +"</li>";
+		concatenated_result += "<li class='suggestion' onclick='select("+ currentResult.id +")'>" + currentResult.name +"</li>";
 	}
 	
 	output.innerHTML = concatenated_result;
