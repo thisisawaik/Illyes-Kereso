@@ -81,6 +81,10 @@ table
 	font-size: 1.2em;
 	
 	color: #DDDDDD;
+
+		border-style: solid;
+		border-width: 0px 0px 1px 0px;
+		border-color: #FFC101;
 }
 
 .results
@@ -106,7 +110,7 @@ table
 	border-bottom-right-radius: 5px;
 	
 	min-height: 10px;
-	max-height: 250px;
+	max-height: 40%;
 }
 
 #results_box
