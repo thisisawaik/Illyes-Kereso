@@ -106,8 +106,7 @@ table
 	border-bottom-right-radius: 5px;
 	
 	min-height: 10px;
-	max-height: 90%;
-	transition:height 1s;
+	max-height: 250px;
 }
 
 #results_box
