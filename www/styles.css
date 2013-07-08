@@ -78,7 +78,7 @@ table
 	list-style-type:none;
 	text-align:center;
 	
-	font-size: 20px;
+	font-size: 1.2em;
 	
 	color: #DDDDDD;
 }
@@ -106,7 +106,7 @@ table
 	border-bottom-right-radius: 5px;
 	
 	min-height: 10px;
-	max-height: 1000px;
+	max-height: 90%;
 	transition:height 1s;
 }
 
