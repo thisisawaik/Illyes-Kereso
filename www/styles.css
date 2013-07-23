@@ -16,31 +16,33 @@ body
 		height: 480px;
 		/*bottom: 10px;
 		right: 10px;*/
-	
-	border-style: solid;
-		border-width: 5px;
-		border-color: #FFC101;
 
 		overflow: auto;
 }
 
 #search_box
 {
-	background-color: #FF2116;
+	background-color: #079900;
 	
-	height: 25px;
+	height: 45px;
 	text-align: center;
 	
-	border-style: solid;
-		border-width: 3px;
-		border-color: #FFC101;
-	
-	border-radius: 5px;
+	border-radius: 2px;
 	
 	margin: 5px;
+	margin-top: 30px;
 	margin-bottom: 0px;
 	
 	box-shadow: 2px 3px 4px 0px #000000;
+}
+
+#input
+{
+	position: fixed;
+	top: 50px;
+	left: 30px;
+
+	width: 230px;
 }
 
 #output
@@ -75,26 +77,29 @@ table
 
 #suggestions_box
 {
-	margin: 0px 50px 0px 10px;
-	background-color: #41C640;
+	margin: -5px 50px 0px 10px;
+	background-color: #43c73c;
 	overflow: auto;
-	border-style: solid;
-		border-width: 0px 3px 3px 3px;
-		border-color: #01960B;
 		
-	border-bottom-left-radius: 5px;
-	border-bottom-right-radius: 5px;
+	border-bottom-left-radius: 2px;
+	border-bottom-right-radius: 2px;
 	
-	min-height: 10px;
-	max-height: 40%;
+	min-height: 35px;
+	width: 280px;
+
+	position: fixed;
+	top: 85px;
+	z-index: -1;
 }
 
 .suggestion
 {
 	margin: 2px;
+	margin-left: 10px;
+	margin-right: 20px;
 	padding:3px;
 	list-style-type:none;
-	text-align:center;
+	text-align:left;
 	
 	font-size: 1.2em;
 	
@@ -105,6 +110,11 @@ table
 		border-color: #01960B;
 }
 
+.suggestion:hover
+{
+	cursor: pointer;
+}
+
 .results
 {
 	margin: 2px;
@@ -112,6 +122,29 @@ table
 	list-style-type:none;
 	text-align:center;
 	color: #DDDDDD;
+}
+
+#submit
+{
+	position: fixed;
+	top: 50px;
+	left: 280px;
+
+	width: 70px;
+	height: 25px;
+
+	box-shadow: 1px 2px 3px 0px #000000;
+}
+
+#submit:active
+{
+	box-shadow: 0px 0px 0px 0px #000000;
+	cursor: pointer;
+}
+
+#submit:hover
+{
+	cursor: pointer;
 }
 
 #results_box

@@ -9,6 +9,8 @@ var db;
 
 function init()
 {
+	document.getElementById("input").value = "";
+	
 	global_init();
 	
 	if(!localStorage.getItem("wasrun"))
@@ -73,7 +75,16 @@ function output_results(result)
 	for (var i = 0; i < result.rows.length; i++)
 	{
 		var currentResult = result.rows.item(i);
-		concatenated_result += "<li class='suggestion' onclick='select("+ currentResult.id +")'>" + currentResult.name +"</li>";
+		
+		if (i === result.rows.length - 1)
+		{
+			concatenated_result += "<li style='border-style: none' class='suggestion' onclick='select("+ currentResult.id +")'>" + currentResult.name +"</li>";
+		}
+
+		else
+		{
+			concatenated_result += "<li class='suggestion' onclick='select("+ currentResult.id +")'>" + currentResult.name +"</li>";
+		}
 	}
 	
 	output.innerHTML = concatenated_result;
