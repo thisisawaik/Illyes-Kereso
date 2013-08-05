@@ -1,6 +1,6 @@
 "use strict";
 
-var dbVersion = 0.32;
+var dbVersion = 0.45;
 
 var input, output, submit_button;
 // var create_button, populate_button;
@@ -59,7 +59,7 @@ function displayList(searchInput)
 			toSearch += searchInput[i] + '%';
 		}
 	
-		db.sqlQuery("SELECT * FROM `teachers` WHERE `name` LIKE '%" + toSearch + "'", output_results);
+		db.sqlQuery("SELECT * FROM `people` WHERE `name` LIKE '%" + toSearch + "'", output_results);
 	}
 
 	else

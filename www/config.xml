@@ -4,7 +4,7 @@
 	xmlns = "http://www.w3.org/ns/widgets"
 	xmlns:gap = "http://phonegap.com/ns/1.0"
 	id = "com.waik.illyeskereso"
-	version = "0.0.1"
+	version = "0.2.4"
 	>
 
 	<name>Illyés Kereső</name>
@@ -21,8 +21,8 @@
 	
 	<preference name="orientation" value="portrait" />
 	
-	<icon src="icon.png" />
+	<icon src="images/icon.png" />
 	
-	<gap:splash src="splash.png" />
+	<gap:splash src="images/splash.png" />
 
 </widget>

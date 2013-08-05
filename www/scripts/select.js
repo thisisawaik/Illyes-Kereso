@@ -36,7 +36,7 @@ function displayList()
 		toSearch += input[i] + '%';
 	}
 	
-	db.sqlQuery("SELECT * FROM `teachers` WHERE `name` LIKE '%" + toSearch + "'", output_results);
+	db.sqlQuery("SELECT * FROM `people` WHERE `name` LIKE '%" + toSearch + "'", output_results);
 }
 
 function select(id)
