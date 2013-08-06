@@ -2,6 +2,8 @@
 
 var isPhoneGap = false;
 
+var dayNames = ["Vasárnap", "Hétfő", "Kedd", "Szerda", "Csütörtök", "Péntek", "Szombat"];
+
 var classes = 
 	[
 		new class_time(0, "7:25", "8:10"),
@@ -27,4 +29,9 @@ function class_time(no, start, end)
 	this.no = no;
 	this.start = {hours:start.split(":")[0], minutes:start.split(":")[1]};
 	this.end = {hours:end.split(":")[0], minutes:end.split(":")[1]};
+	
+	this.toString = function()
+	{
+		return this.start.hours + ":" + this.start.minutes + "-" + this.end.hours + ":" + this.end.minutes;
+	}
 }

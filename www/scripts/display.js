@@ -1,6 +1,6 @@
 "use strict";
 
-var id;
+var id, type;
 
 var db;
 
@@ -9,16 +9,64 @@ function init()
 	global_init();
 	
 	id = localStorage.getItem("id");
+	type = localStorage.getItem("type")
 	
 	display();
 }
 
-function display_data(result)
+function displayClasses(result)
 {
-	document.getElementById("name").innerHTML += result.rows.item(0).name;
+	var output = "";
+	
+	for(var i = 0; i < result.rows.length; i++)
+	{
+		var currentClass = result.rows.item(i);
+		
+		output += "<hr />" + classes[currentClass.time].toString() + " | " + currentClass.subject + " | " + currentClass.room;
+	}
+	
+	document.getElementById("todaysClasses").innerHTML = output;
+}
+
+function displayData(result)
+{
+	var currentPerson = result.rows.item(0);
+	document.getElementById("name").innerHTML += currentPerson.name;
+	
+	var date = new Date();
+	document.getElementById("date").innerHTML += dayNames[date.getDay()];
+	
+	if(type == "teacher")
+	{
+		db.sqlQuery("SELECT * FROM lessons WHERE teacher = " + id + " AND day = " + date.getDay(), displayClasses);
+	}
+	
+	if(type == "student")
+	{
+		var groups = currentPerson.groups.split("|").slice(1, -1);
+		
+		if(groups.length == 0)
+		{
+			alert("Nem tagja egy csoportnak sem!");
+			return false;
+		}
+		
+		var query = "SELECT * FROM lessons WHERE";
+		
+		for(var i = 0; i < groups.length; i++)
+		{
+			query += " groups LIKE '%|" + groups[i] + "|%' OR"
+		}
+		
+		query = query.slice(0, -2);
+		
+		query += "AND day = " + date.getDay();
+		
+		db.sqlQuery(query, displayClasses);
+	}
 }
 
 function display()
 {
-	db.sqlQuery("SELECT * FROM `teachers` WHERE `id` = " + id, display_data);
+	db.sqlQuery("SELECT * FROM " + type + "s WHERE id = " + id, displayData);
 }

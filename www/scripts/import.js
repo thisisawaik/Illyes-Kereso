@@ -25,8 +25,6 @@ function create()
 		
 		query += ")";
 		
-		console.log(query);
-		
 		db.sqlQuery(query);
 		
 		for(var i = 0; i < data.tables[currentTable].rows.length; i++)

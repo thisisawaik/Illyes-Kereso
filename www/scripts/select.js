@@ -21,7 +21,7 @@ function output_results(result)
 	for (var i = 0; i < result.rows.length; i++)
 	{
 		var currentResult = result.rows.item(i);
-		concatenated_result += "<li class='results' onclick='select("+ currentResult.id +")'>" + currentResult.name + " ("+ currentResult.class +")" +"</li>";
+		concatenated_result += "<li class='results' onclick='select("+ currentResult.id +")'>" + currentResult.name + " (" + currentResult.class + ")" + "</li>";
 	}
 	
 	output.innerHTML = concatenated_result;

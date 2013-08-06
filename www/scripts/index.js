@@ -1,6 +1,6 @@
 "use strict";
 
-var dbVersion = 0.45;
+var dbVersion = 0.498;
 
 var input, output, submit_button;
 // var create_button, populate_button;
@@ -16,7 +16,6 @@ function init()
 	if(!localStorage.getItem("wasrun"))
 	{
 		create();
-		populate();
 		
 		localStorage.setItem("wasrun", true);
 		localStorage.setItem("dbVersion", dbVersion);
@@ -44,24 +43,26 @@ function init()
 
 function search()
 {
-	localStorage.setItem("input", input.value);
-	window.location = "select.html";
+	displayList(input.value);
+	//localStorage.setItem("input", input.value);
+	//window.location = "select.html";
 }
 
 function displayList(searchInput)
 {
 	var toSearch = "";
-
+	
 	if (searchInput.length != 0)
-	{	
+	{
 		for (var i = 0; i < searchInput.length; i++)
 		{
 			toSearch += searchInput[i] + '%';
 		}
-	
-		db.sqlQuery("SELECT * FROM `people` WHERE `name` LIKE '%" + toSearch + "'", output_results);
+		
+		db.sqlQuery("SELECT id, 'student' AS type, name, class FROM students WHERE name LIKE '%" + toSearch +
+			"' UNION SELECT id, 'teacher' AS type, name, 'Tanár' AS class FROM teachers WHERE name LIKE '%" + toSearch + "' ORDER BY name", output_results);
 	}
-
+	
 	else
 	{
 		output.innerHTML="";
@@ -76,22 +77,25 @@ function output_results(result)
 	{
 		var currentResult = result.rows.item(i);
 		
-		if (i === result.rows.length - 1)
+		if(i == result.rows.length - 1)
 		{
-			concatenated_result += "<li style='border-style: none' class='suggestion' onclick='select("+ currentResult.id +")'>" + currentResult.name +"</li>";
+			concatenated_result += "<li class='suggestion last' ";
 		}
-
+		
 		else
 		{
-			concatenated_result += "<li class='suggestion' onclick='select("+ currentResult.id +")'>" + currentResult.name +"</li>";
+			concatenated_result += "<li class='suggestion' ";
 		}
+		
+		concatenated_result += "onclick='select(" + currentResult.id + ", \"" + currentResult.type + "\")'>" + currentResult.name + " (" + currentResult.class + ")" + "</li>";
 	}
 	
 	output.innerHTML = concatenated_result;
 }
 
-function select(id)
+function select(id, type)
 {
 	localStorage.setItem("id", id);
+	localStorage.setItem("type", type);
 	window.location = "display.html";
 }
