@@ -51,7 +51,7 @@ function displayData(result)
 			return false;
 		}
 		
-		var query = "SELECT * FROM lessons WHERE";
+		var query = "SELECT * FROM lessons WHERE (";
 		
 		for(var i = 0; i < groups.length; i++)
 		{
@@ -60,7 +60,7 @@ function displayData(result)
 		
 		query = query.slice(0, -2);
 		
-		query += "AND day = " + date.getDay();
+		query += ") AND day = " + date.getDay();
 		
 		db.sqlQuery(query, displayClasses);
 	}

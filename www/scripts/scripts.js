@@ -17,6 +17,9 @@ var classes =
 		new class_time(7, "14:15", "15:00")
 	];
 
+//var fakeDate = new Date(2013, 6, 1, 10, 30);
+//Date = function(){return fakeDate};
+
 function global_init()
 {
 	document.addEventListener("deviceready", function(){isPhoneGap = true;alert("running on phonegap!");}, false);
