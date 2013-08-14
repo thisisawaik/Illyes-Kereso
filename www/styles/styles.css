@@ -1,13 +1,16 @@
 body
 {
 	text-align: center;
+	height: 480px;
+	width: 360px;
+	background-color: #FFFFFF;
 	
 	overflow: auto;
 }
 
 #content
 {
-	background-color: #FFFFFF;
+	background-color: #cacaca;
 	
 	position: fixed;
 		top: 10px;
@@ -30,17 +33,21 @@ body
 	border-radius: 2px;
 	
 	margin: 5px;
-	margin-top: 30px;
-	margin-bottom: 0px;
+		margin-top: 30px;
+		margin-bottom: 0px;
 	
 	box-shadow: 2px 3px 4px 0px #000000;
+
+	border-style: solid;
+		border-width: 0px 3px 0px 3px;
+		border-color: #ffa424;
 }
 
 #input
 {
 	position: fixed;
-	top: 50px;
-	left: 30px;
+		top: 50px;
+		left: 30px;
 	
 	width: 230px;
 }
@@ -78,13 +85,17 @@ table
 		top: 85px;
 	
 	z-index: -1;
+
+	border-style: solid;
+		border-width: 0px 3px 0px 3px;
+		border-color: #ffa424;
 }
 
 .suggestion
 {
 	margin: 2px;
-	margin-left: 10px;
-	margin-right: 20px;
+		margin-left: 10px;
+		margin-right: 20px;
 	padding:3px;
 	list-style-type:none;
 	text-align:left;
@@ -93,7 +104,7 @@ table
 	
 	color: #FFFFFF;
 	
-		border-style: solid;
+	border-style: solid;
 		border-width: 0px 0px 1px 0px;
 		border-color: #01960B;
 }
@@ -121,8 +132,8 @@ table
 #submit
 {
 	position: fixed;
-	top: 50px;
-	left: 280px;
+		top: 50px;
+		left: 280px;
 	
 	width: 70px;
 	height: 25px;
