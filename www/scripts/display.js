@@ -31,7 +31,17 @@ function displayClasses(result)
 function displayData(result)
 {
 	var currentPerson = result.rows.item(0);
-	document.getElementById("name").innerHTML += currentPerson.name;
+
+	if(type == "student")
+	{
+		document.getElementById("name").innerHTML += currentPerson.name + " " + currentPerson.class;
+	}
+	else
+	{
+		document.getElementById("name").innerHTML += currentPerson.name;
+	}
+	
+	console.log(currentPerson.class);
 	
 	var date = new Date();
 	document.getElementById("date").innerHTML += dayNames[date.getDay()];
