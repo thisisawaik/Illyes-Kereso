@@ -25,7 +25,7 @@ body
 
 #search_box
 {
-	background-color: #079900;
+	background-color: #007000;
 	
 	height: 45px;
 	text-align: center;
@@ -37,6 +37,28 @@ body
 		margin-bottom: 0px;
 	
 	box-shadow: 2px 3px 4px 0px #000000;
+
+	border-style: solid;
+		border-width: 0px 3px 0px 3px;
+		border-color: #ffa424;
+}
+
+#suggestions_box
+{
+	margin: -5px 50px 0px 10px;
+	background-color: #079900;
+	overflow: auto;
+	
+	border-bottom-left-radius: 2px;
+	border-bottom-right-radius: 2px;
+	
+	min-height: 35px;
+	width: 280px;
+	
+	position: fixed;
+		top: 85px;
+	
+	z-index: -1;
 
 	border-style: solid;
 		border-width: 0px 3px 0px 3px;
@@ -69,28 +91,6 @@ table
 	margin-right: auto;
 }
 
-#suggestions_box
-{
-	margin: -5px 50px 0px 10px;
-	background-color: #43c73c;
-	overflow: auto;
-	
-	border-bottom-left-radius: 2px;
-	border-bottom-right-radius: 2px;
-	
-	min-height: 35px;
-	width: 280px;
-	
-	position: fixed;
-		top: 85px;
-	
-	z-index: -1;
-
-	border-style: solid;
-		border-width: 0px 3px 0px 3px;
-		border-color: #ffa424;
-}
-
 .suggestion
 {
 	margin: 2px;
@@ -106,7 +106,7 @@ table
 	
 	border-style: solid;
 		border-width: 0px 0px 1px 0px;
-		border-color: #01960B;
+		border-color: #ffa424;
 }
 
 .suggestion.last
@@ -161,6 +161,39 @@ table
 		border-width: 3px;
 		border-color: #FFC101;
 	max-height: 89%;
+}
+
+.greenbox
+{
+	background-color: #079900;
+
+	padding: 5px;
+	margin: 10px;
+
+	box-shadow: 2px 3px 4px 0px #000000;
+
+	border-style: solid;
+		border-width: 0px 3px 0px 3px;
+		border-color: #ffa424;
+}
+
+#todaysClasses
+{
+	display: inline-block;
+
+	border-radius: 2px;
+}
+
+#name
+{
+	color: #FFFFFF;
+}
+
+#date
+{
+	color: #FFFFFF;
+
+	display: block;
 }
 
 th,td

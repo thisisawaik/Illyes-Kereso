@@ -22,7 +22,8 @@ function displayClasses(result)
 	{
 		var currentClass = result.rows.item(i);
 		
-		output += "<hr />" + classes[currentClass.time].toString() + " | " + currentClass.subject + " | " + currentClass.room;
+		output += "<span style='color: #FFFFFF'>" + classes[currentClass.time].toString() + " | " + currentClass.subject + " | " + currentClass.room + "</span>";
+		console.log(currentClass);
 	}
 	
 	document.getElementById("todaysClasses").innerHTML = output;
@@ -40,7 +41,7 @@ function displayData(result)
 	{
 		document.getElementById("name").innerHTML += currentPerson.name;
 	}
-	
+
 	console.log(currentPerson.class);
 	
 	var date = new Date();
