@@ -193,7 +193,7 @@ table
 {
 	color: #FFFFFF;
 
-	display: block;
+	display: inline-block;
 }
 
 th,td
