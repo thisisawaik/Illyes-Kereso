@@ -4,6 +4,25 @@ var data = {
 	
 	"tables": {
 	
+		"groups": {
+			
+			"columns": {
+				"id": "INTEGER PRIMARY KEY AUTOINCREMENT",
+				"name": "TEXT"
+			},
+			
+			"rows": [
+				{"name": "8.a"},
+				{"name": "10.a"},
+				{"name": "10.a Lány"},
+				{"name": "10.a Fiú"},
+				{"name": "10.a Angol A"},
+				{"name": "10.a Angol B"},
+				{"name": "10.a Német"},
+				{"name": "10. Olasz"}
+			]
+		},
+		
 		"students": {
 			
 			"columns": {
@@ -21,26 +40,11 @@ var data = {
 			]
 		},
 		
-		"groups": {
-			
-			"columns": {
-				"id": "INTEGER PRIMARY KEY AUTOINCREMENT",
-				"name": "TEXT",
-			},
-			
-			"rows": [
-				{"name": "8.a"},
-				{"name": "10.a"},
-				{"name": "10.a Angol A"},
-				{"name": "10. Olasz"}
-			]
-		},
-		
 		"teachers": {
 			
 			"columns": {
 				"id": "INTEGER PRIMARY KEY AUTOINCREMENT",
-				"name": "TEXT",
+				"name": "TEXT"
 			},
 			
 			"rows": [
@@ -71,27 +75,6 @@ var data = {
 				{"teacher": 2, "day": 2, "time": 3, "subject": "Kémia", "groups": "|3|4|", "room": "112"},
 				{"teacher": 2, "day": 4, "time": 1, "subject": "Kémia", "groups": "|1|4|", "room": "112"},
 				{"teacher": 2, "day": 5, "time": 2, "subject": "Kémia", "groups": "|3|", "room": "112"}
-			]
-		},
-		
-		"times": {
-			
-			"columns": {
-				"id": "INTEGER PRIMARY KEY AUTOINCREMENT",
-				"count": "INTEGER",
-				"time": "TEXT"
-			},
-			
-			"rows": [
-				{"count": 0, "time": "7:25-8:10"},
-				{"count": 1, "time": "8:15-9:00"},
-				{"count": 2, "time": "9:10-9:55"},
-				{"count": 3, "time": "10:15-11:00"},
-				{"count": 4, "time": "11:10-11:55"},
-				{"count": 5, "time": "12:05-12:50"},
-				{"count": 6, "time": "13:00-13:45"},
-				{"count": 6, "time": "13:25-14:10"},
-				{"count": 7, "time": "14:15-15:00"}
 			]
 		}
 	}

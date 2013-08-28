@@ -1,6 +1,6 @@
 "use strict";
 
-var dbVersion = 0.498;
+var dbVersion = 0.499;
 
 var input, output, submit_button;
 // var create_button, populate_button;
